@@ -1,5 +1,5 @@
 {
-  "name": "next-saas-rbac",
+  "name": "next-nest-react-native-turbo-boilerplate",
   "private": true,
   "scripts": {
     "build": "turbo build",

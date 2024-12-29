@@ -1,9 +1,13 @@
 {
   "name": "api",
   "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "nest build",
-    "dev": "nest start --watch",
+    "env:load": "dotenv -e ../../.env --",
+    "build": "pnpm env:load nest build",
+    "dev": "pnpm env:load nest start --watch",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
   },
   "dependencies": {
@@ -12,7 +16,8 @@
     "@nestjs/platform-express": "^10.0.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
-    "@saas/auth": "workspace:*"
+    "@next-nest-react-native-turbo-boilerplate/auth": "workspace:*",
+    "@next-nest-react-native-turbo-boilerplate/env": "workspace:*"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
@@ -29,15 +34,15 @@
     "ts-loader": "^9.4.3",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
-    "@saas/eslint-config": "workspace:*",
-    "@saas/prettier": "workspace:*",
-    "@saas/tsconfig": "workspace:*",
-    "@saas/env": "workspace:*"
+    "@next-nest-react-native-turbo-boilerplate/eslint-config": "workspace:*",
+    "@next-nest-react-native-turbo-boilerplate/prettier": "workspace:*",
+    "@next-nest-react-native-turbo-boilerplate/tsconfig": "workspace:*",
+    "dotenv-cli": "^7.3.0"
   },
-  "prettier": "@saas/prettier",
+  "prettier": "@next-nest-react-native-turbo-boilerplate/prettier",
   "eslintConfig": {
     "extends": [
-      "@saas/eslint-config/node"
+      "@next-nest-react-native-turbo-boilerplate/eslint-config/node"
     ]
   }
 }

@@ -1,11 +1,11 @@
 {
-  "extends": "@saas/tsconfig/node.json",
+  "extends": "@next-nest-react-native-turbo-boilerplate/tsconfig/node.json",
   "include": ["src/**/*", "@types/*.d.ts"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
-    "outDir": "dist",
+    "outDir": "./dist",
   }
 }
