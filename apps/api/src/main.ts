@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core'
-import { getServerEnv } from '@next-nest-react-native-turbo-boilerplate/env'
+import { getServerEnv } from '@next-nest-expo-turbo-boilerplate/env'
 
 import { AppModule } from './app.module'
 

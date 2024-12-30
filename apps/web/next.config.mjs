@@ -1,4 +1,4 @@
-await import('@next-nest-react-native-turbo-boilerplate/env').then(
+await import('@next-nest-expo-turbo-boilerplate/env').then(
   ({ getClientEnv }) => {
     getClientEnv()
   },

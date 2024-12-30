@@ -1,5 +1,5 @@
 {
-  "name": "@next-nest-react-native-turbo-boilerplate/auth",
+  "name": "@next-nest-expo-turbo-boilerplate/auth",
   "version": "0.0.0",
   "private": true,
   "main": "dist/index.js",
@@ -18,17 +18,17 @@
     "build": "tsc -p tsconfig.build.json"
   },
   "devDependencies": {
-    "@next-nest-react-native-turbo-boilerplate/eslint-config": "workspace:*",
-    "@next-nest-react-native-turbo-boilerplate/prettier": "workspace:*",
-    "@next-nest-react-native-turbo-boilerplate/tsconfig": "workspace:*",
+    "@next-nest-expo-turbo-boilerplate/eslint-config": "workspace:*",
+    "@next-nest-expo-turbo-boilerplate/prettier": "workspace:*",
+    "@next-nest-expo-turbo-boilerplate/tsconfig": "workspace:*",
     "typescript": "^5"
   },
   "eslintConfig": {
     "extends": [
-      "@next-nest-react-native-turbo-boilerplate/eslint-config/library"
+      "@next-nest-expo-turbo-boilerplate/eslint-config/library"
     ]
   },
-  "prettier": "@next-nest-react-native-turbo-boilerplate/prettier",
+  "prettier": "@next-nest-expo-turbo-boilerplate/prettier",
   "dependencies": {
     "@casl/ability": "^6.7.2",
     "zod": "^3.24.1"

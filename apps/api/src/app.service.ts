@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
-import { defineAbilityFor } from '@next-nest-react-native-turbo-boilerplate/auth'
-import env from '@next-nest-react-native-turbo-boilerplate/env'
+import { defineAbilityFor } from '@next-nest-expo-turbo-boilerplate/auth'
+import env from '@next-nest-expo-turbo-boilerplate/env'
 
 @Injectable()
 export class AppService {

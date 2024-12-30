@@ -1,5 +1,5 @@
 {
-  "name": "mobile",
+  "name": "@next-nest-expo-turbo-boilerplate/mobile",
   "private": true,
   "version": "1.0.0",
   "main": "index.ts",
@@ -23,18 +23,18 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
-    "@next-nest-react-native-turbo-boilerplate/eslint-config": "workspace:*",
-    "@next-nest-react-native-turbo-boilerplate/prettier": "workspace:*",
-    "@next-nest-react-native-turbo-boilerplate/tsconfig": "workspace:*",
+    "@next-nest-expo-turbo-boilerplate/eslint-config": "workspace:*",
+    "@next-nest-expo-turbo-boilerplate/prettier": "workspace:*",
+    "@next-nest-expo-turbo-boilerplate/tsconfig": "workspace:*",
     "@types/react": "~18.3.12",
     "@types/styled-components": "^5.1.34",
     "dotenv-cli": "^7.3.0",
     "typescript": "^5"
   },
-  "prettier": "@next-nest-react-native-turbo-boilerplate/prettier",
+  "prettier": "@next-nest-expo-turbo-boilerplate/prettier",
   "eslintConfig": {
     "extends": [
-      "@next-nest-react-native-turbo-boilerplate/eslint-config/expo"
+      "@next-nest-expo-turbo-boilerplate/eslint-config/expo"
     ]
   }
 }

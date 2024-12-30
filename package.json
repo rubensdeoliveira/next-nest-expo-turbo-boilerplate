@@ -1,5 +1,5 @@
 {
-  "name": "next-nest-react-native-turbo-boilerplate",
+  "name": "next-nest-expo-turbo-boilerplate",
   "private": true,
   "scripts": {
     "build": "turbo build",

@@ -1,4 +1,4 @@
 {
-  "extends": "@next-nest-react-native-turbo-boilerplate/tsconfig/library.json",
+  "extends": "@next-nest-expo-turbo-boilerplate/tsconfig/library.json",
   "include": ["src/**/*"]
 }

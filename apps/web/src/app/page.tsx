@@ -1,5 +1,5 @@
-import { defineAbilityFor } from '@next-nest-react-native-turbo-boilerplate/auth'
-import { getClientEnv } from '@next-nest-react-native-turbo-boilerplate/env'
+import { defineAbilityFor } from '@next-nest-expo-turbo-boilerplate/auth'
+import { getClientEnv } from '@next-nest-expo-turbo-boilerplate/env'
 
 export default function Home() {
   const ability = defineAbilityFor({ id: 'teste', role: 'MEMBER' })

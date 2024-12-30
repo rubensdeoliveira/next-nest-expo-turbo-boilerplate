@@ -1,5 +1,5 @@
 {
-  "name": "@next-nest-react-native-turbo-boilerplate/eslint-config",
+  "name": "@next-nest-expo-turbo-boilerplate/eslint-config",
   "version": "0.0.0",
   "private": true,
   "files": [
@@ -11,9 +11,9 @@
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",
     "eslint-plugin-simple-import-sort": "^12.0.0",
-    "@next-nest-react-native-turbo-boilerplate/prettier": "workspace:*"
+    "@next-nest-expo-turbo-boilerplate/prettier": "workspace:*"
   },
-  "prettier": "@next-nest-react-native-turbo-boilerplate/prettier",
+  "prettier": "@next-nest-expo-turbo-boilerplate/prettier",
   "eslintConfig": {
     "extends": ["./library.js"]
   }
