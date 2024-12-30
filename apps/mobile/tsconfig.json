@@ -1,0 +1,11 @@
+{
+  "extends": "@next-nest-react-native-turbo-boilerplate/tsconfig/nextjs.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+}
