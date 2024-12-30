@@ -2,13 +2,27 @@
   "name": "@next-nest-react-native-turbo-boilerplate/env",
   "version": "0.0.0",
   "private": true,
-  "main": "index.ts",
-  "types": "index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json"
+  },
   "devDependencies": {
     "@next-nest-react-native-turbo-boilerplate/eslint-config": "workspace:*",
     "@next-nest-react-native-turbo-boilerplate/prettier": "workspace:*",
     "@next-nest-react-native-turbo-boilerplate/tsconfig": "workspace:*",
-    "@types/node": "^20.3.1"
+    "@types/node": "^20",
+    "typescript": "^5"
   },
   "eslintConfig": {
     "extends": [

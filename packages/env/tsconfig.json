@@ -1,7 +1,4 @@
 {
   "extends": "@next-nest-react-native-turbo-boilerplate/tsconfig/library.json",
-  "include": ["index.ts"],
-  "compilerOptions": {
-    "outDir": "./dist",
-  }
+  "include": ["src/**/*"]
 }
