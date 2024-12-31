@@ -5,5 +5,6 @@ module.exports = {
   rules: {
     'simple-import-sort/imports': 'error',
     'no-useless-constructor': 'off',
+    camelcase: 'off',
   },
 }

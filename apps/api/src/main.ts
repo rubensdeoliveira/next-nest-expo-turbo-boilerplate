@@ -1,10 +1,11 @@
 import { NestFactory } from '@nestjs/core'
-import { getServerEnv } from '@next-nest-expo-turbo-boilerplate/env'
 
 import { AppModule } from './app.module'
+import { env } from './config/env'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)
-  await app.listen(getServerEnv().SERVER_PORT)
+  const port = env.SERVER_PORT
+  await app.listen(port)
 }
 bootstrap()

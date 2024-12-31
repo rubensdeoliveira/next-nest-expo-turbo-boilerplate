@@ -9,9 +9,10 @@ const client = z.object({
 const server = z.object({
   SERVER_PORT: z.coerce.number(),
   DATABASE_URL: z.string().url(),
+  JWT_SECRET: z.string(),
 })
 
-/* Do not touch anything above */
+/* Do not touch anything below */
 
 export type EnvClientSchema = z.infer<typeof client>
 export type EnvServerSchema = z.infer<typeof server>

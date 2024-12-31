@@ -1,0 +1,39 @@
+// Copy for requests with authentication
+
+@baseUrl = http://localhost:3333
+@authToken = {{create_session.response.body.access_token}}
+
+# @name create_session
+POST {{baseUrl}}/sessions
+Content-Type: application/json
+
+{
+  "email": "jose2@gmail.com",
+  "password": "123123"
+}
+
+###
+
+// Copy for requests with authentication
+
+# @name create_task
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "title": "Task 21",
+  "description": "Essa é a primeira task"
+}
+
+###
+
+# @name update_task
+PUT {{baseUrl}}/tasks
+Content-Type: application/json
+Authorization: Bearer {{authToken}} 
+
+{
+  "title": "Task 1",
+  "description": "Essa é a primeira task"
+}

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "dev": "pnpm env:load expo start --android",
+    "dev": "pnpm env:load expo start",
     "start": "pnpm env:load expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",

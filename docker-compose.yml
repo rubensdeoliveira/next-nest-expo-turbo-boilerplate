@@ -1,8 +1,9 @@
-version: '3.7'
+version: '3.8'
 
 services:
-  pg:
-    image: bitnami/postgresql:latest
+  postgres:
+    container_name: next-nest-expo-turbo-boilerplate-pg
+    image: postgres
     ports:
       - '5432:5432'
     environment:

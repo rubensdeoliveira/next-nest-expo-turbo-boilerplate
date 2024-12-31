@@ -4,8 +4,12 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
+    "dev:web": "turbo dev --filter=@next-nest-expo-turbo-boilerplate/web --filter=@next-nest-expo-turbo-boilerplate/api",
+    "dev:mobile": "turbo dev --filter=@next-nest-expo-turbo-boilerplate/mobile --filter=@next-nest-expo-turbo-boilerplate/api",
     "lint": "turbo lint",
-    "clean": "chmod +x clean.sh && ./clean.sh"
+    "clean": "chmod +x clean.sh && ./clean.sh",
+    "open:emulator": "/opt/android-studio/bin/studio.sh",
+    "generate:secret": "openssl rand -base64 32"
   },
   "devDependencies": {
     "turbo": "latest"

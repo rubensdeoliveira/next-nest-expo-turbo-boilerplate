@@ -1,0 +1,22 @@
+@baseUrl = http://localhost:3333
+
+# @name create_session
+POST {{baseUrl}}/sessions
+Content-Type: application/json
+
+{
+  "email": "jose2@gmail.com",
+  "password": "123123"
+}
+
+###
+
+# @name update_session
+PUT {{baseUrl}}/sessions
+Content-Type: application/json
+
+{
+  "name": "José",
+  "email": "jose",
+  "password": "123"
+}

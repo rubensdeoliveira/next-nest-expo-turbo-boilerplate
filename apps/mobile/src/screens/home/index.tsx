@@ -5,7 +5,7 @@ import { Container } from './style'
 export function Home() {
   return (
     <Container>
-      <Text>Hello World</Text>
+      <Text>Hello World e</Text>
     </Container>
   )
 }
