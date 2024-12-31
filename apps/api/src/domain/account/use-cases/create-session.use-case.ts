@@ -1,7 +1,6 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common'
-import { JwtService } from '@nestjs/jwt'
-import { compare } from 'bcryptjs'
 
+import { EncryptionGateway, JwtGateway } from '@/domain/account/gateways'
 import { AccountRepository } from '@/domain/account/repositories'
 
 type CreateSessionUseCaseRequest = {
@@ -17,7 +16,8 @@ type CreateSessionUseCaseResponse = {
 export class CreateSessionUseCase {
   constructor(
     private accountRepository: AccountRepository,
-    private jwt: JwtService,
+    private encryptionGateway: EncryptionGateway,
+    private jwtGateway: JwtGateway,
   ) {}
 
   async execute(
@@ -30,14 +30,15 @@ export class CreateSessionUseCase {
       throw new UnauthorizedException('Invalid credentials')
     }
 
-    const isValidPassword = await compare(password, account.password)
+    const isValidPassword = await this.encryptionGateway.validateHash({
+      value: password,
+      hashedValue: account.password,
+    })
     if (!isValidPassword) {
       throw new UnauthorizedException('Invalid credentials')
     }
 
-    const access_token = this.jwt.sign({
-      sub: account.id,
-    })
+    const access_token = this.jwtGateway.sign(account.id)
 
     return {
       access_token,

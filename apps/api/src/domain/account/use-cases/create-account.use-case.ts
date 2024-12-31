@@ -1,7 +1,7 @@
 import { ConflictException, Injectable } from '@nestjs/common'
-import { hash } from 'bcryptjs'
 
 import { AccountEntity } from '@/domain/account/entities'
+import { EncryptionGateway } from '@/domain/account/gateways'
 import { AccountRepository } from '@/domain/account/repositories'
 
 type CreateAccountUseCaseRequest = {
@@ -14,7 +14,10 @@ type CreateAccountUseCaseResponse = Omit<AccountEntity, 'password'>
 
 @Injectable()
 export class CreateAccountUseCase {
-  constructor(private accountRepository: AccountRepository) {}
+  constructor(
+    private accountRepository: AccountRepository,
+    private encryptionGateway: EncryptionGateway,
+  ) {}
 
   async execute(
     data: CreateAccountUseCaseRequest,
@@ -26,7 +29,9 @@ export class CreateAccountUseCase {
       throw new ConflictException('Account with same email already exists')
     }
 
-    const hashedPassword = await hash(data.password, 8)
+    const hashedPassword = await this.encryptionGateway.createHash(
+      data.password,
+    )
 
     const { email, name, id } = await this.accountRepository.create({
       ...data,

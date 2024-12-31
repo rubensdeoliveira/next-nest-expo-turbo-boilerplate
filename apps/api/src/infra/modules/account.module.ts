@@ -14,10 +14,12 @@ import {
 import { env } from '@/infra/config'
 
 import { DatabaseModule } from './common/database.module'
+import { GatewayModule } from './common/gateway.module'
 
 @Module({
   imports: [
     DatabaseModule,
+    GatewayModule,
     PassportModule,
     JwtModule.registerAsync({
       global: true,
