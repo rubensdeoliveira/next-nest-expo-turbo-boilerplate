@@ -2,8 +2,7 @@ import { Module } from '@nestjs/common'
 
 import { CreateTaskController } from '@/app/task/controllers'
 import { CreateTaskUseCase } from '@/domain/task/use-cases'
-
-import { DatabaseModule } from './common/database.module'
+import { DatabaseModule } from '@/infra/modules/common'
 
 @Module({
   imports: [DatabaseModule],

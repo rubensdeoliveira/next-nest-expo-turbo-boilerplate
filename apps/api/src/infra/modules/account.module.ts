@@ -12,9 +12,7 @@ import {
   CreateSessionUseCase,
 } from '@/domain/account/use-cases'
 import { env } from '@/infra/config'
-
-import { DatabaseModule } from './common/database.module'
-import { GatewayModule } from './common/gateway.module'
+import { DatabaseModule, GatewayModule } from '@/infra/modules/common'
 
 @Module({
   imports: [

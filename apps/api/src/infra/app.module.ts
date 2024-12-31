@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common'
 
-import { AccountModule } from './modules/account.module'
-import { TaskModule } from './modules/task.module'
+import { AccountModule, TaskModule } from '@/infra/modules'
 
 @Module({
   imports: [AccountModule, TaskModule],

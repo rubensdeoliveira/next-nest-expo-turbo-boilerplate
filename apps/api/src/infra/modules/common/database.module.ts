@@ -2,11 +2,11 @@ import { Module } from '@nestjs/common'
 
 import { AccountRepository } from '@/domain/account/repositories'
 import { TaskRepository } from '@/domain/task/repositories'
+import { PrismaService } from '@/infra/database/prisma/config'
 import {
   PrismaAccountRepository,
-  PrismaService,
   PrismaTaskRepository,
-} from '@/infra/database'
+} from '@/infra/database/prisma/repositories'
 
 @Module({
   providers: [
