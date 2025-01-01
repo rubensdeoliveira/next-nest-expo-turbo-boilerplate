@@ -1,8 +1,8 @@
 import { ConflictException, Injectable } from '@nestjs/common'
 
-import { AccountEntity } from '@/domain/account/entities'
-import { EncryptionGateway } from '@/domain/account/gateways'
-import { AccountRepository } from '@/domain/account/repositories'
+import { AccountEntity } from '../entities/account.entity'
+import { EncryptionGateway } from '../gateways/encryption.gateway'
+import { AccountRepository } from '../repositories/account.repository'
 
 type CreateAccountUseCaseRequest = {
   email: string

@@ -1,12 +1,10 @@
 import { Module } from '@nestjs/common'
 
-import { AccountRepository } from '@/domain/account/repositories'
-import { TaskRepository } from '@/domain/task/repositories'
-import { PrismaService } from '@/infra/database/prisma/config'
-import {
-  PrismaAccountRepository,
-  PrismaTaskRepository,
-} from '@/infra/database/prisma/repositories'
+import { AccountRepository } from '@/domain/account/repositories/account.repository'
+import { TaskRepository } from '@/domain/task/repositories/task.repository'
+import { PrismaService } from '@/infra/database/prisma/config/prisma.service'
+import { PrismaAccountRepository } from '@/infra/database/prisma/repositories/prisma-account.repository'
+import { PrismaTaskRepository } from '@/infra/database/prisma/repositories/prisma-task.repository'
 
 @Module({
   providers: [

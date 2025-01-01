@@ -4,7 +4,7 @@ import { compare, hash } from 'bcryptjs'
 import {
   EncryptionGateway,
   ValidateHashParams,
-} from '@/domain/account/gateways'
+} from '@/domain/account/gateways/encryption.gateway'
 
 @Injectable()
 export class BcryptEncryptionGateway implements EncryptionGateway {

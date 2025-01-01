@@ -1,12 +1,16 @@
 import { Body, Controller, HttpCode, Post, UseGuards } from '@nestjs/common'
 
-import { CurrentAccount, CurrentAccountType } from '@/app/account/decorators'
-import { JwtGuard } from '@/app/account/guards'
+import {
+  CurrentAccount,
+  CurrentAccountType,
+} from '@/app/account/decorators/current-account.decorator'
+import { JwtGuard } from '@/app/account/guards/jwt.guard'
+import { CreateTaskUseCase } from '@/domain/task/use-cases/create-task.use-case'
+
 import {
   CreateTaskBodySchema,
   createTaskValidator,
-} from '@/app/task/validators'
-import { CreateTaskUseCase } from '@/domain/task/use-cases'
+} from '../validators/create-task.validator'
 
 @Controller('/tasks')
 @UseGuards(JwtGuard)

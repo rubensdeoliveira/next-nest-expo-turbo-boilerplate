@@ -1,7 +1,8 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common'
 
-import { DefaultRepository } from '@/domain/common/repositories'
-import { PrismaService } from '@/infra/database/prisma/config'
+import { DefaultRepository } from '@/domain/common/repositories/default.repository'
+
+import { PrismaService } from '../../config/prisma.service'
 
 @Injectable()
 export class PrismaDefaultRepository<T> implements DefaultRepository<T> {

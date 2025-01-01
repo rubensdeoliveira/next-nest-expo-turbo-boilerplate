@@ -1,4 +1,5 @@
-import { DefaultRepository } from '@/domain/common/repositories'
-import { TaskEntity } from '@/domain/task/entities'
+import { DefaultRepository } from '@/domain/common/repositories/default.repository'
+
+import { TaskEntity } from '../entities/task.entity'
 
 export abstract class TaskRepository extends DefaultRepository<TaskEntity> {}

@@ -1,10 +1,11 @@
 import { Body, Controller, HttpCode, Post } from '@nestjs/common'
 
+import { CreateSessionUseCase } from '@/domain/account/use-cases/create-session.use-case'
+
 import {
   CreateSessionBodySchema,
   createSessionValidator,
-} from '@/app/account/validators'
-import { CreateSessionUseCase } from '@/domain/account/use-cases'
+} from '../validators/create-session.validator'
 
 @Controller('/sessions')
 export class CreateSessionController {

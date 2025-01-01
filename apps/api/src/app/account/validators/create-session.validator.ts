@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-import { ZodValidationPipe } from '@/app/common/pipes'
+import { ZodValidationPipe } from '@/app/common/pipes/zod-validation.pipe'
 
 const createSessionBodySchema = z.object({
   email: z.string().email(),

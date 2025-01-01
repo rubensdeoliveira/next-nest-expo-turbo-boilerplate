@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 
-import { TaskRepository } from '@/domain/task/repositories'
+import { TaskRepository } from '../repositories/task.repository'
 
 type CreateTaskUseCaseRequest = {
   title: string

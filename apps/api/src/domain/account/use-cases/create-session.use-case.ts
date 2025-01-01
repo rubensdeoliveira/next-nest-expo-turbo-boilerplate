@@ -1,7 +1,8 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common'
 
-import { EncryptionGateway, JwtGateway } from '@/domain/account/gateways'
-import { AccountRepository } from '@/domain/account/repositories'
+import { EncryptionGateway } from '../gateways/encryption.gateway'
+import { JwtGateway } from '../gateways/jwt.gateway'
+import { AccountRepository } from '../repositories/account.repository'
 
 type CreateSessionUseCaseRequest = {
   email: string

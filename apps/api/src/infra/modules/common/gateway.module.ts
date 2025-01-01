@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common'
 
-import { EncryptionGateway, JwtGateway } from '@/domain/account/gateways'
-import { BcryptEncryptionGateway, NestJwtGateway } from '@/infra/gateways'
+import { EncryptionGateway } from '@/domain/account/gateways/encryption.gateway'
+import { JwtGateway } from '@/domain/account/gateways/jwt.gateway'
+import { BcryptEncryptionGateway } from '@/infra/gateways/bcrypt-encryption.gateway'
+import { NestJwtGateway } from '@/infra/gateways/nest-jwt.gateway'
 
 @Module({
   providers: [

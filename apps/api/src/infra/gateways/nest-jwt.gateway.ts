@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 
-import { JwtGateway } from '@/domain/account/gateways'
+import { JwtGateway } from '@/domain/account/gateways/jwt.gateway'
 
 @Injectable()
 export class NestJwtGateway implements JwtGateway {

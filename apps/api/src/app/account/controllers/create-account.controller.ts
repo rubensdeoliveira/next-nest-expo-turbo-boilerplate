@@ -1,10 +1,11 @@
 import { Body, Controller, HttpCode, Post } from '@nestjs/common'
 
+import { CreateAccountUseCase } from '@/domain/account/use-cases/create-account.use-case'
+
 import {
   CreateAccountBodySchema,
   createAccountValidator,
-} from '@/app/account/validators'
-import { CreateAccountUseCase } from '@/domain/account/use-cases'
+} from '../validators/create-account.validator'
 
 @Controller('/accounts')
 export class CreateAccountController {
