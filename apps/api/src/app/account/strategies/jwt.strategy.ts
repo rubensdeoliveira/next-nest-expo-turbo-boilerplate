@@ -9,7 +9,7 @@ const accountPayload = z.object({
   sub: z.string(),
 })
 
-export type AccountPayload = z.infer<typeof accountPayload>
+type AccountPayload = z.infer<typeof accountPayload>
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {

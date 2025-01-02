@@ -12,7 +12,7 @@ import {
   createTaskValidator,
 } from '../validators/create-task.validator'
 
-@Controller('/tasks')
+@Controller('/task')
 @UseGuards(JwtGuard)
 export class CreateTaskController {
   constructor(private createTaskUseCase: CreateTaskUseCase) {}
@@ -23,9 +23,10 @@ export class CreateTaskController {
     @CurrentAccount() account: CurrentAccountType,
     @Body(createTaskValidator) data: CreateTaskBodySchema,
   ) {
+    const { accountId } = account
     const task = await this.createTaskUseCase.execute({
       ...data,
-      accountId: account.id,
+      accountId,
     })
     return task
   }

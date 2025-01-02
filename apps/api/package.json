@@ -22,6 +22,7 @@
     "@next-nest-expo-turbo-boilerplate/env": "workspace:*",
     "@prisma/client": "^6.1.0",
     "bcryptjs": "^2.4.3",
+    "date-fns": "^4.1.0",
     "passport-jwt": "^4.0.1",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",

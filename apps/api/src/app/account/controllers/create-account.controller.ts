@@ -7,7 +7,7 @@ import {
   createAccountValidator,
 } from '../validators/create-account.validator'
 
-@Controller('/accounts')
+@Controller('/account')
 export class CreateAccountController {
   constructor(private createAccountUseCase: CreateAccountUseCase) {}
 

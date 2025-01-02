@@ -10,6 +10,8 @@ const server = z.object({
   SERVER_PORT: z.coerce.number(),
   DATABASE_URL: z.string().url(),
   JWT_SECRET: z.string(),
+  JWT_TOKEN_EXPIRES_IN: z.string(),
+  JWT_REFRESH_TOKEN_EXPIRES_IN_DAYS: z.coerce.number(),
 })
 
 /* Do not touch anything below */

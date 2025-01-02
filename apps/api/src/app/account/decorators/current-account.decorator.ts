@@ -1,6 +1,8 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common'
 
-export type CurrentAccountType = { id: string }
+export type CurrentAccountType = {
+  accountId: string
+}
 
 export const CurrentAccount = createParamDecorator(
   (_, context: ExecutionContext): CurrentAccountType => {
@@ -8,6 +10,6 @@ export const CurrentAccount = createParamDecorator(
 
     const { sub } = request.user
 
-    return { id: sub }
+    return JSON.parse(sub)
   },
 )

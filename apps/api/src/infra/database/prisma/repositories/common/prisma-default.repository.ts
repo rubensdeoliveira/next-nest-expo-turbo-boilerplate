@@ -1,6 +1,9 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common'
 
-import { DefaultRepository } from '@/domain/common/repositories/default.repository'
+import {
+  DefaultRepository,
+  DefaultRepositoryFieldsToDelete,
+} from '@/domain/common/repositories/default.repository'
 
 import { PrismaService } from '../../config/prisma.service'
 
@@ -19,7 +22,7 @@ export class PrismaDefaultRepository<T> implements DefaultRepository<T> {
     return this.prismaService
   }
 
-  async create(entity: Omit<T, 'id'>): Promise<T> {
+  async create(entity: Omit<T, DefaultRepositoryFieldsToDelete>): Promise<T> {
     const createdEntity = await this.prisma[this.model].create({
       data: entity,
     })
@@ -38,7 +41,10 @@ export class PrismaDefaultRepository<T> implements DefaultRepository<T> {
     return findedEntity
   }
 
-  async update(id: string, entity: Omit<T, 'id'>): Promise<T> {
+  async update(
+    id: string,
+    entity: Omit<T, DefaultRepositoryFieldsToDelete>,
+  ): Promise<T> {
     const updatedEntity = await this.prisma[this.model].update({
       where: { id },
       data: entity,

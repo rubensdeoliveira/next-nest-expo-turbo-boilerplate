@@ -1,10 +1,10 @@
 // Copy for requests with authentication
 
 @baseUrl = http://localhost:3333
-@authToken = {{create_session.response.body.access_token}}
+@authToken = {{create_session.response.body.accessToken}}
 
 # @name create_session
-POST {{baseUrl}}/sessions
+POST {{baseUrl}}/session
 Content-Type: application/json
 
 {
@@ -16,8 +16,8 @@ Content-Type: application/json
 
 // Copy for requests with authentication
 
-# @name create_task
-POST {{baseUrl}}/tasks
+# @name create
+POST {{baseUrl}}/task
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
@@ -28,8 +28,8 @@ Authorization: Bearer {{authToken}}
 
 ###
 
-# @name update_task
-PUT {{baseUrl}}/tasks
+# @name update
+PUT {{baseUrl}}/task
 Content-Type: application/json
 Authorization: Bearer {{authToken}} 
 

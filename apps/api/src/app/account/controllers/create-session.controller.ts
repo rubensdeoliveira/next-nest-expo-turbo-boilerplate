@@ -7,7 +7,7 @@ import {
   createSessionValidator,
 } from '../validators/create-session.validator'
 
-@Controller('/sessions')
+@Controller('/session')
 export class CreateSessionController {
   constructor(private createSessionUseCase: CreateSessionUseCase) {}
 

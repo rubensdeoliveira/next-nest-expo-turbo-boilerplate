@@ -8,20 +8,34 @@ datasource db {
 }
 
 model Account {
-  id       String @id @default(uuid())
-  name     String
-  email    String @unique
-  password String
-  tasks    Task[]
+  id        String         @id @default(uuid())
+  name      String
+  email     String         @unique
+  password  String
+  tasks     Task[]
+  tokens    AccountToken[]
+  createdAt DateTime?      @default(now()) @map("created_at")
+  updatedAt DateTime?      @updatedAt @map("updated_at")
 
   @@map("accounts")
+}
+
+model AccountToken {
+  id           String    @id @default(uuid())
+  refreshToken String    @unique @map("refresh_token")
+  account      Account   @relation(fields: [accountId], references: [id])
+  accountId    String    @map("account_id")
+  expiresDate  DateTime  @map("expires_date")
+  createdAt    DateTime? @default(now()) @map("created_at")
+
+  @@map("account_tokens")
 }
 
 model Task {
   id          String    @id @default(uuid())
   title       String
   description String
-  createdAt   DateTime  @default(now()) @map("created_at")
+  createdAt   DateTime? @default(now()) @map("created_at")
   updatedAt   DateTime? @updatedAt @map("updated_at")
 
   owner     Account @relation(fields: [accountId], references: [id])

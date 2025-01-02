@@ -21,11 +21,6 @@ export class PrismaAccountRepository
         email,
       },
     })
-
-    if (!account) {
-      return null
-    }
-
     return account
   }
 }

@@ -1,7 +1,7 @@
 @baseUrl = http://localhost:3333
 
-# @name create_session
-POST {{baseUrl}}/sessions
+# @name create
+POST {{baseUrl}}/session
 Content-Type: application/json
 
 {
@@ -11,12 +11,10 @@ Content-Type: application/json
 
 ###
 
-# @name update_session
-PUT {{baseUrl}}/sessions
+# @name refresh
+POST {{baseUrl}}/session/refresh
 Content-Type: application/json
 
 {
-  "name": "José",
-  "email": "jose",
-  "password": "123"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ7XCJhY2NvdW50SWRcIjpcIjkxOTBmNTZkLTU1NDgtNDIzYy1hNWRmLWJjZjkwMzRiNTQ5OFwifSIsImlhdCI6MTczNTc3OTExMiwiZXhwIjoxNzM1ODY1NTEyfQ.NOD8fsroOj9IbZydeaw_a4_70HQo0tQQkv5jLgRU7Ow"
 }

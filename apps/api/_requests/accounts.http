@@ -1,7 +1,23 @@
-@baseUrl = http://localhost:3333
+// Copy for requests with authentication
 
-# @name create_account
-POST {{baseUrl}}/accounts
+@baseUrl = http://localhost:3333
+@authToken = {{create_session.response.body.accessToken}}
+
+# @name create_session
+POST {{baseUrl}}/session
+Content-Type: application/json
+
+{
+  "email": "jose@gmail.com",
+  "password": "123123"
+}
+
+###
+
+// Copy for requests with authentication
+
+# @name create
+POST {{baseUrl}}/account
 Content-Type: application/json
 
 {
@@ -12,9 +28,10 @@ Content-Type: application/json
 
 ###
 
-# @name update_account
-PUT {{baseUrl}}/accounts
+# @name me
+GET {{baseUrl}}/account/me
 Content-Type: application/json
+Authorization: Bearer {{authToken}}
 
 {
   "name": "José",
