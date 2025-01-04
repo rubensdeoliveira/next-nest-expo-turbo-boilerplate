@@ -11,7 +11,7 @@ model Account {
   id        String         @id @default(uuid())
   name      String
   email     String         @unique
-  password  String
+  password  String?
   tasks     Task[]
   tokens    AccountToken[]
   createdAt DateTime?      @default(now()) @map("created_at")

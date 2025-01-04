@@ -7,9 +7,7 @@ export type CurrentAccountType = {
 export const CurrentAccount = createParamDecorator(
   (_, context: ExecutionContext): CurrentAccountType => {
     const request = context.switchToHttp().getRequest()
-
     const { sub } = request.user
-
     return JSON.parse(sub)
   },
 )

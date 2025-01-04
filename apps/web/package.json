@@ -10,23 +10,28 @@
     "env:load": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.2",
     "@next-nest-expo-turbo-boilerplate/auth": "workspace:*",
-    "@next-nest-expo-turbo-boilerplate/env": "workspace:*"
+    "@next-nest-expo-turbo-boilerplate/env": "workspace:*",
+    "@tanstack/react-query": "^5.62.11",
+    "axios": "^1.7.9",
+    "cookies-next": "^5.0.2",
+    "jose": "^5.9.6",
+    "next": "15.1.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "@next-nest-expo-turbo-boilerplate/eslint-config": "workspace:*",
     "@next-nest-expo-turbo-boilerplate/prettier": "workspace:*",
     "@next-nest-expo-turbo-boilerplate/tsconfig": "workspace:*",
-    "dotenv-cli": "^7.3.0"
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "dotenv-cli": "^7.3.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   },
   "prettier": "@next-nest-expo-turbo-boilerplate/prettier",
   "eslintConfig": {

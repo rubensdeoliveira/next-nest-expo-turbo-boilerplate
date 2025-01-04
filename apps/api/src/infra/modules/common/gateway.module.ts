@@ -7,7 +7,10 @@ import { BcryptEncryptionGateway } from '@/infra/gateways/bcrypt-encryption.gate
 import { DateFnsDateManipulatorGateway } from '@/infra/gateways/date-fns-date-manipulator.gateway'
 import { NestJwtGateway } from '@/infra/gateways/nest-jwt.gateway'
 
+import { DatabaseModule } from './database.module'
+
 @Module({
+  imports: [DatabaseModule],
   providers: [
     {
       provide: EncryptionGateway,

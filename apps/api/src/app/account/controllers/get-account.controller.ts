@@ -1,4 +1,4 @@
-import { Controller, Get, HttpCode, UseGuards } from '@nestjs/common'
+import { Controller, Get, UseGuards } from '@nestjs/common'
 
 import { GetAccountUseCase } from '@/domain/account/use-cases/get-account.use-case'
 
@@ -14,7 +14,6 @@ export class GetAccountController {
   constructor(private readonly getAccountUseCase: GetAccountUseCase) {}
 
   @Get('/me')
-  @HttpCode(200)
   async handle(@CurrentAccount() account: CurrentAccountType) {
     const { accountId } = account
     const getAccount = await this.getAccountUseCase.execute({
