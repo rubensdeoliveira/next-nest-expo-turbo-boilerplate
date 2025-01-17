@@ -1,8 +1,5 @@
-import {
-  getClientEnv,
-  getServerEnv,
-} from '@next-nest-expo-turbo-boilerplate/env'
+import { getWebEnv } from '@next-nest-expo-turbo-boilerplate/env'
 
-const envVars = { ...getServerEnv(), ...getClientEnv() }
+const envVars = getWebEnv()
 
 export { envVars }

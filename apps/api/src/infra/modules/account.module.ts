@@ -13,6 +13,7 @@ import { JwtStrategy } from '@/app/account/strategies/jwt.strategy'
 import { CreateAccountUseCase } from '@/domain/account/use-cases/create-account.use-case'
 import { CreateSessionUseCase } from '@/domain/account/use-cases/create-session.use-case'
 import { CreateSessionWithGoogleUseCase } from '@/domain/account/use-cases/create-session-with-google.use-case'
+import { CreateSessionWithGoogleMobileUseCase } from '@/domain/account/use-cases/create-session-with-google-mobile.use-case'
 import { GetAccountUseCase } from '@/domain/account/use-cases/get-account.use-case'
 import { RefreshSessionUseCase } from '@/domain/account/use-cases/refresh-session.use-case'
 
@@ -45,6 +46,7 @@ import { GatewayModule } from './common/gateway.module'
     CreateAccountUseCase,
     CreateSessionUseCase,
     CreateSessionWithGoogleUseCase,
+    CreateSessionWithGoogleMobileUseCase,
     RefreshSessionUseCase,
   ],
 })

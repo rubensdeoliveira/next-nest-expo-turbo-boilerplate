@@ -1,8 +1,7 @@
-await import('@next-nest-expo-turbo-boilerplate/env').then(
-  ({ getClientEnv }) => {
-    getClientEnv()
-  },
-)
+await import('@next-nest-expo-turbo-boilerplate/env').then(({ getWebEnv }) => {
+  console.log(getWebEnv())
+  getWebEnv()
+})
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

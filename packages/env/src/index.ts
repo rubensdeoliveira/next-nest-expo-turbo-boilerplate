@@ -1,13 +1,6 @@
 import { z } from 'zod'
 
-const client = z.object({
-  NEXT_PUBLIC_API_URL: z.string().url(),
-  NEXT_PUBLIC_BASE_URL: z.string().url(),
-  NEXT_PUBLIC_APP_NAME: z.string().min(1),
-  NEXT_PUBLIC_ENV: z.enum(['development', 'staging', 'production']),
-})
-
-const server = z.object({
+const api = z.object({
   SERVER_PORT: z.coerce.number(),
   DATABASE_URL: z.string().url(),
   JWT_SECRET: z.string().min(1),
@@ -17,21 +10,40 @@ const server = z.object({
   GOOGLE_CLIENT_SECRET: z.string().min(1),
   GOOGLE_CLIENT_CALLBACK_URL: z.string().url(),
   API_APP_NAME: z.string().min(1),
-  CLIENT_APP_URL: z.string().url(),
-  NODE_ENV: z.enum(['development', 'staging', 'production']),
+  WEB_APP_URL: z.string().url(),
+  ENV: z.enum(['development', 'staging', 'production']),
+})
+
+const web = z.object({
+  NEXT_PUBLIC_API_APP_URL: z.string().url(),
+  API_APP_URL: z.string().url(),
+  API_APP_NAME: z.string().min(1),
+  ENV: z.enum(['development', 'staging', 'production']),
+  JWT_SECRET: z.string().min(1),
+})
+
+const mobile = z.object({
+  EXPO_PUBLIC_GOOGLE_CLIENT_ID: z.string().min(1),
+  EXPO_PUBLIC_API_APP_URL: z.string().url(),
+  EXPO_PUBLIC_ENV: z.enum(['development', 'staging', 'production']),
 })
 
 /* Do not touch anything below */
 
-export type EnvClientSchema = z.infer<typeof client>
-export type EnvServerSchema = z.infer<typeof server>
+export type EnvApiSchema = z.infer<typeof api>
+export type EnvWebSchema = z.infer<typeof web>
+export type EnvMobileSchema = z.infer<typeof mobile>
 
-export function getClientEnv() {
-  return getEnvResult(client) as EnvClientSchema
+export function getApiEnv() {
+  return getEnvResult(api) as EnvApiSchema
 }
 
-export function getServerEnv() {
-  return getEnvResult(server) as EnvServerSchema
+export function getWebEnv() {
+  return getEnvResult(web) as EnvWebSchema
+}
+
+export function getMobileEnv() {
+  return getEnvResult(mobile) as EnvMobileSchema
 }
 
 function getEnvResult(schema: z.ZodSchema) {
